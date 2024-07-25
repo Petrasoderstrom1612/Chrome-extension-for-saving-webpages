@@ -4,6 +4,6 @@
     "name": "Websites bookmark",
     "action": { 
         "default_popup": "index.html",
-        "default_icon": "./Web/icons8-website-32.png"
+        "default_icon": "icon.png"
     }
 }

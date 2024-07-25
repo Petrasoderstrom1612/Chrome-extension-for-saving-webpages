@@ -1,6 +1,6 @@
 const inputEl = document.getElementById("input-el")
 const ulEl = document.getElementById("ul-el")
-let mySites = ["kkk","lll","g"]
+let mySites = []
 
 renderLeads()
 
