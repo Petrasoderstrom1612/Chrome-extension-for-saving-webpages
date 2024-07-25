@@ -2,6 +2,7 @@ const inputEl = document.getElementById("input-el")
 const ulEl = document.getElementById("ul-el")
 let mySites = ["kkk","lll","g"]
 
+renderLeads()
 
 document.getElementById("input-btn").addEventListener("click", function(){
     mySites.push(inputEl.value)
@@ -13,7 +14,7 @@ document.getElementById("input-btn").addEventListener("click", function(){
 function renderLeads(){ //instead of looping through mySites and slowing down the page, we can create one extra variable and keep adding the new mySites to it and only render the stored new variable with all mySites, instead of updating on every loop. Remember! DOM manipulation comes with a cost.
     let listItems = ""
     for (let i = 0; i < mySites.length; i++) {
-    listItems += `<li>${mySites[i]}</li>`
+    listItems += `<li><a href="${mySites[i]}" target="_blank">${mySites[i]}</a></li>`
     }
     ulEl.innerHTML = listItems
 }
