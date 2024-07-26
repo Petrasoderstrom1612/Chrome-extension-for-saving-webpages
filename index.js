@@ -14,7 +14,7 @@ document.getElementById("input-btn").addEventListener("click", function(){
     mySites.push(inputEl.value) //on user's input add the user's input to the array mySites
     inputEl.value = ""  //clear the input field so it looks pretty and UI indicates you added your input 
 
-    localStorage.setItem("mySites", JSON.stringify(mySites)) //save the new input into local storage
+    localStorage.setItem("mySites", JSON.stringify(mySites)) //save the new input into local storage (the first argument is already a string, hence you only need to stringify the array)
     displayMySites(mySites) //display all the inputs
 })
 
