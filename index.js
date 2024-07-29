@@ -5,16 +5,17 @@ let mySites = []
 let mySitesFromLocalStorage = JSON.parse(localStorage.getItem("mySites")) //declare a variable my sites from local storage, to be the parsed value from local storage
 console.log(mySitesFromLocalStorage)
 
+//ON RENDER
 if(mySitesFromLocalStorage) { //if I have some sites saved in local storage, I want to display them on render
     mySites = mySitesFromLocalStorage //give my array the values from local storage
     displayMySites(mySites) //display it
 }
 
-document.getElementById("input-btn").addEventListener("click", function(){
+document.getElementById("input-btn").addEventListener("click", function(){ //STARTED CREATING CODE HERE
     mySites.push(inputEl.value) //on user's input add the user's input to the array mySites
     inputEl.value = ""  //clear the input field so it looks pretty and UI indicates you added your input 
 
-    localStorage.setItem("mySites", JSON.stringify(mySites)) //save the new input into local storage (the first argument is already a string, hence you only need to stringify the array)
+    localStorage.setItem("mySites", JSON.stringify(mySites)) //IMPORTANT! THE WAY YOU GET YOUR ARRAY TO PERMANENTLY STAY LOCALLY - save the new input into local storage (the first argument is already a string, hence you only need to stringify the array) 
     displayMySites(mySites) //display all the inputs
 })
 
