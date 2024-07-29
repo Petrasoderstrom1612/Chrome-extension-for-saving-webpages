@@ -1,5 +1,6 @@
 const inputEl = document.getElementById("input-el")
 const ulEl = document.getElementById("ul-el")
+const tabBtn = document.getElementById("tab-btn")
 let mySites = []
 
 let mySitesFromLocalStorage = JSON.parse(localStorage.getItem("mySites")) //declare a variable my sites from local storage, to be the parsed value from local storage
@@ -19,6 +20,11 @@ document.getElementById("input-btn").addEventListener("click", function(){ //STA
     displayMySites(mySites) //display all the inputs
 })
 
+tabBtn.addEventListener("click", function(){
+    mySites.push(document.baseURI)
+    mySitesFromLocalStorage = localStorage.setItem("mySites", JSON.stringify(mySites))
+    displayMySites(mySites)
+})
 
 function displayMySites(desiredArrayOfSites){ //instead of looping through mySites and slowing down the page, we can create one extra variable and keep adding the new mySites to it and only render the stored new variable with all mySites, instead of updating on every loop. Remember! DOM manipulation comes with a cost.
     let listItems = ""
