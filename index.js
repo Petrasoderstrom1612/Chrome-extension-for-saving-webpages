@@ -1,7 +1,7 @@
 const inputEl = document.getElementById("input-el")
 const ulEl = document.getElementById("ul-el")
 const tabBtn = document.getElementById("tab-btn")
-let remoteTabBtn = document.getElementById("remote-tab-btn")
+const remoteTabBtn = document.getElementById("remote-tab-btn")
 let mySites = []
 let lastloop = 0
 
