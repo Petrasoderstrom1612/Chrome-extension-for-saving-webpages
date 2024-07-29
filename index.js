@@ -1,7 +1,9 @@
 const inputEl = document.getElementById("input-el")
 const ulEl = document.getElementById("ul-el")
 const tabBtn = document.getElementById("tab-btn")
+let remoteTabBtn = document.getElementById("remote-tab-btn")
 let mySites = []
+let lastloop = 0
 
 let mySitesFromLocalStorage = JSON.parse(localStorage.getItem("mySites")) //declare a variable my sites from local storage, to be the parsed value from local storage
 console.log(mySitesFromLocalStorage)
@@ -48,4 +50,10 @@ document.getElementById("delete-btn").addEventListener("click", function(){
     mySitesFromLocalStorage = localStorage.clear()
     mySites = []
     console.log(mySites)
+})
+
+remoteTabBtn.addEventListener("click", function(){
+    mySites.pop()
+    mySitesFromLocalStorage = localStorage.setItem("mySites", JSON.stringify(mySites))
+    displayMySites(mySites)
 })
