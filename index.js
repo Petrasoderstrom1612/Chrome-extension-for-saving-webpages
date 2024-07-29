@@ -21,9 +21,18 @@ document.getElementById("input-btn").addEventListener("click", function(){ //STA
 })
 
 tabBtn.addEventListener("click", function(){
-    mySites.push(document.baseURI)
+    // mySites.push(document.baseURI) This does not work for extension as it is saving the currect chrome extension uri instead of the current tab hence the code below from Stack overflow. It would work for browser.
+    let queryInfo = {
+        currentWindow: true, //the current window and not another one opened behind
+        active: true //the current tab
+    };
+
+    chrome.tabs.query(queryInfo, function(tabs) {
+    let url = tabs[0].url
+    mySites.push(url)
     mySitesFromLocalStorage = localStorage.setItem("mySites", JSON.stringify(mySites))
     displayMySites(mySites)
+    })
 })
 
 function displayMySites(desiredArrayOfSites){ //instead of looping through mySites and slowing down the page, we can create one extra variable and keep adding the new mySites to it and only render the stored new variable with all mySites, instead of updating on every loop. Remember! DOM manipulation comes with a cost.
