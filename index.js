@@ -10,8 +10,8 @@ console.log(mySitesFromLocalStorage)
 
 //ON RENDER
 if(mySitesFromLocalStorage) { //if I have some sites saved in local storage, I want to display them on render
-    mySites = mySitesFromLocalStorage //give my array the values from local storage 
-    displayMySites(mySites) //display it
+    mySites = mySitesFromLocalStorage //give my array the values from local storage !!!
+    displayMySites(mySites) //display it !!!
 }
 
 //ADD OWN INPUT
